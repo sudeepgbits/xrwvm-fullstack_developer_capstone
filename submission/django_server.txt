@@ -1,0 +1,17 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 26, 2026 - 12:39:35
+Django version 6.0.5, using settings 'djangoproj.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+[26/May/2026 12:39:46] "GET / HTTP/1.1" 200 2679
+[26/May/2026 12:39:46] "GET /static/style.css HTTP/1.1" 200 1918
+[26/May/2026 12:39:46] "GET /static/bootstrap.min.css HTTP/1.1" 200 155800
+[26/May/2026 12:39:46] "GET /static/car_dealership.jpg HTTP/1.1" 200 263696
+Not Found: /favicon.ico
+[26/May/2026 12:39:46] "GET /favicon.ico HTTP/1.1" 404 2678

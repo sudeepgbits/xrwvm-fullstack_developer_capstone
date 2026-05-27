@@ -1,0 +1,2 @@
+curl -X GET http://localhost:3030/fetchdealer/2
+[{"_id":"6a17343ad6af57b959ed9dd1","id":2,"city":"Minneapolis","state":"Minnesota","address":"6337 Butternut Crossing","zip":"55402","lat":"44.9762","long":"-93.2759","short_name":"Temp","full_name":"Temp Car Dealership","__v":0}]

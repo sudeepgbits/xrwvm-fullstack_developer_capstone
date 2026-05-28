@@ -9,7 +9,7 @@ from dotenv import dotenv_values
 _env_path = Path(__file__).resolve().parent / ".env"
 _env = dotenv_values(_env_path)
 
-# Prefer djangoapp/.env over lab-injected env (Skills Network often sets backend_url to :8000)
+# Prefer djangoapp/.env over lab env (Skills Network sets :8000)
 backend_url = (
     _env.get("backend_url")
     or os.getenv("backend_url")
@@ -28,11 +28,13 @@ print(f"Using backend_url={backend_url} (from {_env_path})")
 print(f"Using sentiment_analyzer_url={sentiment_analyzer_url}")
 
 # def get_request(endpoint, **kwargs):
+
+
 def get_request(endpoint, **kwargs):
     params = ""
-    if(kwargs):
-        for key,value in kwargs.items():
-            params=params+key+"="+value+"&"
+    if kwargs:
+        for key, value in kwargs.items():
+            params = params + key + "=" + value + "&"
 
     request_url = backend_url+endpoint+"?"+params
 
@@ -65,14 +67,16 @@ def analyze_review_sentiments(text):
 # def analyze_review_sentiments(text):
 # request_url = sentiment_analyzer_url+"analyze/"+text
 # Add code for retrieving sentiments
+
+
 def post_review(data_dict):
-    request_url = backend_url+"/insert_review"
+    request_url = backend_url + "/insert_review"
     try:
-        response = requests.post(request_url,json=data_dict)
+        response = requests.post(request_url, json=data_dict)
         print(response.json())
         return response.json()
-    except:
-        print("Network exception occurred")
+    except Exception as err:
+        print(f"Network exception occurred: {err}")
 
 # def post_review(data_dict):
 # Add code for posting review
